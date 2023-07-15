@@ -25,7 +25,7 @@ function tickClock() {
 // setInterval(tickClock, 1000);
 
 let hh = 0;
-let mm = 25;
+let mm = 5;
 let ss = 0;
 let timeout;
 
@@ -57,7 +57,7 @@ function startTiming() {
   }
   clockSection.textContent = pomodoro();
   
-  // call tickClock again after one second if the timer is still active
+ 
   if (timeout) {
     timeout = setTimeout(startTiming, 1000);
   }
@@ -73,7 +73,7 @@ button.addEventListener('click', ()=>{
   } else {
     button.textContent = "Start";
     clearTimeout(timeout);
-    timeout = null;  // important to stop tickClock from recalling setTimeout
+    timeout = null;  
   }
 });
 tickClock();
